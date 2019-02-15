@@ -19,7 +19,9 @@ Max Drawdown = (Peak value before largest drop - Lowest value before new high es
 
 # Comments
 
+## Notes on commit `first_version`
+
 My first approach was to write a Rails API - almost automatically, without reflecting too much
-Then, I had to face this issue: basically the goal is to launch a request to the Quandl EOD Api through the command line
-Putting all the logics (creation of request, calculation of rate of return/max drawdown) in one file is not scalable.
+Then, I had to face the goal is to launch a request to the Quandl EOD Api through the command line.
+Putting all the logics (creation of request, calculation of rate of return/max drawdown) in one file, like in this case `lib/stock.rb` is not scalable nor clean.
 I would need to create a Service that can return the request and calculations and a separate simple Ruby file that collects the user inputs, calls this service and puts on the command line the required stock info
