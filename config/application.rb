@@ -22,7 +22,9 @@ module Stockinfoapi
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.api_only = true
-
+    config.active_record.schema_format = :sql
+    config.autoload_paths << Rails.root.join('lib')
+    config.autoload_paths << Rails.root.join('services')
     # The origins value will need to be restricted to a specific domain to prevent external domains to dialogue with our backend
     config.middleware.insert_before 0, Rack::Cors do
       allow do
