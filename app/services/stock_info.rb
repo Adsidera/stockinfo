@@ -55,6 +55,7 @@ require 'slack-notifier'
       " #{calc.max_drawdown_day}"
     end
 
+    # this maybe well refactored in a separate module
     def delivery_to_slack
       slack.post text: "New Stock Values for #{code.upcase} between #{start_date} - #{end_date}"
       slack.post text: "Daily Drawdowns:"

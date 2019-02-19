@@ -2,7 +2,7 @@ require 'colorize'
 
 class Info < Thor
 
-  desc :stock, "generate stock infos"
+  desc :stock, "generate stock infos by providing stock code and start date and end date in format YYYY-MM-DD"
     def stock(*args)
       require './config/environment'
 
